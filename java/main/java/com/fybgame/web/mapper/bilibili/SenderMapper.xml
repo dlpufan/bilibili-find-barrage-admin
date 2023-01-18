@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fybgame.web.mapper.bilibili.SenderMapper">
+
+    <select id="getUser" parameterType="java.lang.String" resultType="user">
+        select * from BilibiliCrc32b${database} where crc32b = #{crc32b}
+    </select>
+    <insert id="insertBilibiliFinder" parameterType="bilibiliFinder">
+        insert into BilibiliFinder(av,p,text,ip,time,isUseHistory) values (#{av},#{p},#{text},#{ip},#{time},#{isUseHistory})
+    </insert>
+</mapper>

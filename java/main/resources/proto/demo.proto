@@ -1,0 +1,29 @@
+//使用 proto3 语法 ,未指定则使用proto2
+syntax = "proto3";
+
+//生成 proto 文件所在包路径
+package com.fybgame.web.protobuf;
+
+//生成 proto 文件所在包路径
+option java_package = "com.fybgame.web.protobuf";
+
+//生成 proto 文件名
+option java_outer_classname="Danmaku";
+
+message DmSegMobileReply{
+  repeated DanmakuElem elems=1;
+}
+message DanmakuElem{
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  int32 weight = 9;
+  string action = 10;
+  int32 pool = 11;
+  string idStr = 12;
+}
